@@ -7,11 +7,11 @@
 
 | Nombre completo | Rol | Responsabilidad principal |
 |------------------|------|-----------------------------|
-| [Felipe Astete] | Líder / Coordinador | Supervisión general, control de plazos, mantenimiento del sistema. |
-| [Allan Quezada] | Analista de requisitos | Documentar actores y casos de uso. |
-| [Felipe Astete] | Diseñador UML | Crear diagramas de casos de uso y clases. |
-| [Roberto Villouta] | Planificador / Dev Lead | Mapear diseño → implementación. |
-| [Roberto Villouta] | Presentador / QA | Preparar slides y realizar pruebas básicas. |
+| Felipe Astete | Líder / Coordinador | Supervisión general, control de plazos, mantenimiento del sistema. |
+| Allan Quezada | Analista de requisitos | Documentar actores y casos de uso. |
+| Felipe Astete | Diseñador UML | Crear diagramas de casos de uso y clases. |
+| Roberto Villouta | Planificador / Dev Lead | Mapear diseño → implementación. |
+| Roberto Villouta | Presentador / QA | Preparar slides y realizar pruebas básicas. |
 
 ---
 
