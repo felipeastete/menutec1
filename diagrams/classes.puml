@@ -1,1 +1,54 @@
+@startuml
+'
+skinparam ClassAttributeIconSize 0 
+left to right direction 
 
+class Usuario {
+  -id: int
+  -nombre: String
+  -correo: String
+  -contraseña: String
+  +registrarse()
+  +iniciarSesion()
+  +cerrarSesion()
+}
+
+class Cliente {
+  +verMenu()
+  +opinar(plato: Plato, comentario: String)
+  +clasificar(plato: Plato, puntuacion: int)
+}
+
+class Administrador {
+  +gestionarMenu()
+  +actualizarMenu(menu: Menu)
+}
+
+class Lider {
+  +gestionarPagina()
+  +mantenerSistema()
+}
+
+class Menu {
+  -id: int
+  -fecha: Date
+  -platos: List<Plato>
+  +obtenerMenuDelDia()
+}
+
+class Plato {
+  -id: int
+  -nombre: String
+  -descripcion: String
+  -categoria: String
+  -puntuacionPromedio: float
+  +actualizarPuntuacion()
+}
+
+Usuario <|-- Cliente
+Usuario <|-- Administrador
+Usuario <|-- Lider
+Menu "1" --> "*" Plato
+
+
+@enduml
