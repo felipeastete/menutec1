@@ -1,2 +1,2 @@
-https://github.com/felipeastete/menutec1
+https://github.com/felipeastete/menutec1.git
 Equipo: MENUTEC - Universidad Catolica
