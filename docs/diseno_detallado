@@ -1,0 +1,71 @@
+# 3. Diseño Detallado
+
+## 3.1 Diagrama de Clases (PlantUML)
+> Nota: El siguiente código puede copiarse en un generador PlantUML para obtener la imagen.
+
+```plantuml
+@startuml
+class DatabaseConnection {
+  - connection : sqlite3.Connection
+  - cursor : sqlite3.Cursor
+  - _instance : DatabaseConnection
+  - _lock : Lock
+  + query(sql, params)
+}
+
+class Plato {
+  - id : int
+  - nombre : str
+  - precio : float
+  - opiniones : list
+  + tipo() : str
+  + agregar_opinion(opinion)
+  + promedio() : float
+}
+
+class PlatoNormal { + tipo() : str }
+class PlatoVegetariano { + tipo() : str }
+class PlatoSinGluten { + tipo() : str }
+
+class MenuFactory { + crear_plato(tipo, id_, nombre, precio) : Plato }
+
+class ObservablePlato {
+  - _observers : list<Observer>
+  + attach(obs : Observer)
+  + detach(obs : Observer)
+  + notify()
+}
+
+class PlatoObservable {
+  + agregar_opinion(opinion)
+}
+
+class Observer { + update(subject) }
+class PromedioObserver { + update(subject : Plato) }
+
+class Usuario {
+  - id : int
+  - nombre : str
+  - email : str
+  + registrarse()
+  + iniciar_sesion()
+  + opinar(plato, opinion)
+}
+
+class Administrador {
+  + subir_menu()
+  + editar_menu()
+}
+
+Plato <|-- PlatoNormal
+Plato <|-- PlatoVegetariano
+Plato <|-- PlatoSinGluten
+Plato <|-- PlatoObservable
+
+Observer <|-- PromedioObserver
+ObservablePlato o-- Observer : notifica *
+PlatoObservable *-- ObservablePlato : composición
+MenuFactory --> Plato : crea
+Administrador --|> Usuario
+DatabaseConnection ..> Plato : gestiona persistencia
+@enduml
