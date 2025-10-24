@@ -1,0 +1,95 @@
+Informe Técnico – Evaluación N°4: Aplicación de Patrones de Diseño y Planificación Colaborativa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asignatura: Diseño y Desarrollo de Software
+ Carrera: Técnico Universitario en Informática
+ Institución: Universidad Católica de Temuco
+ Docente: Cristian Iglesias
+ Proyecto: MENUTEC – Sistema de Gestión de Menús del Casino Universitario
+ Estudiante:  Felipe Astete, Allan Quezada y Roberto Villouta 
+ Fecha: 24 de octubre de 2025
+Introducción
+El proyecto MENUTEC busca optimizar la gestión y comunicación de los menús en el casino universitario, permitiendo que los estudiantes consulten el menú diario y los administradores gestionen los platos de forma centralizada. Además, el sistema incluye funciones como clasificación de platos, opiniones y actualizaciones en tiempo real.
+Esta actividad tiene como propósito aplicar patrones de diseño de software y definir una planificación colaborativa de desarrollo, acercando el trabajo del equipo a un entorno profesional. Los patrones seleccionados ayudan a estructurar mejor el código, reducir la complejidad y facilitar el mantenimiento futuro del sistema.
+
+Análisis del proyecto y selección de patrones
+Análisis general
+El sistema MENUTEC está compuesto por los siguientes módulos:
+Usuarios: donde diferentes roles (cliente, administrador, líder) interactúan con el sistema.
+
+
+Menú y platos: permite registrar, visualizar y calificar comidas.
+
+
+Gestión del sistema: control de la página, actualización de menús y mantenimiento.
+
+
+Durante el análisis se identificaron tres necesidades principales:
+Tener una configuración única de sistema accesible desde cualquier parte.
+
+
+Poder crear diferentes tipos de menús o platos sin modificar la estructura principal.
+
+
+Notificar a los usuarios cuando el menú o la información cambian.
+
+
+
+
+
+
+
+
+
+
+Patrones seleccionados
+ 1. Singleton – Configuración Global
+Problema: se requiere que la configuración general (horarios, datos del casino, conexión base) sea única y accesible desde todo el sistema.
+
+
+Solución: aplicar el patrón Singleton para garantizar una única instancia compartida.
+
+
+Impacto: mejora la coherencia y evita conflictos de configuración.
+
+
+Ejemplo: clase Configuración que almacena los parámetros globales del sistema.
+
+
+2. Factory Method – Creación de Platos y Menús
+Problema: el sistema necesita crear distintos tipos de platos o menús sin modificar la lógica principal.
+
+
+Solución: el patrón Factory Method permite crear objetos Plato o Menu de diferentes tipos (por ejemplo, desayuno, almuerzo, cena) mediante una fábrica.
+
+
+Impacto: mejora la escalabilidad y facilita agregar nuevos tipos de menú.
+
+
+Ejemplo: clase MenuFactory que devuelve instancias según el tipo solicitado.
+
+
+3. Observer – Notificación de Cambios
+Problema: los usuarios deben recibir alertas cuando el menú cambia o hay un nuevo plato.
+
+
+Solución: usar el patrón Observer, donde el objeto Menu (sujeto) notifica a los Usuario (observadores) cada vez que se actualiza la información.
+
+
+Impacto: mejora la comunicación interna del sistema y reduce el acoplamiento.
+
+
+Ejemplo: los clientes reciben automáticamente una notificación cuando se publica un nuevo menú del día.
