@@ -1,17 +1,9 @@
-¡Claro que sí\! Un `README.md` bien formateado en GitHub es esencial para mostrar profesionalismo y asegurar que el jurado pueda verificar fácilmente los requisitos técnicos (Puntos 4 y 5 de las instrucciones).
-
-Aquí tiene el contenido completo para su archivo `README.md`, utilizando el formato Markdown para GitHub, incluyendo emojis y un diseño claro.
-
-**Copia y pega este código para su archivo `README.md`:**
-
------
-
 # 🍽️ Menutec: Plataforma Ágil de Feedback para Menús Diarios
 
 ## 📊 Estado del Proyecto
 
-[](https://www.google.com/search?q=https://github.com/tu-usuario/tu-repositorio)
-[](https://www.google.com/search?q=https://github.com/tu-usuario/tu-repositorio)
+(https://www.google.com/search?q=https://github.com/tu-usuario/tu-repositorio)
+
 
 -----
 
@@ -114,4 +106,3 @@ La limitación actual del proyecto es la ausencia de persistencia de datos.
 
 -----
 
-*(Fin del README.md)*
